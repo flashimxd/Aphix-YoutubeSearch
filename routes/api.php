@@ -1,5 +1,5 @@
 <?php
-
+header('Access-Control-Allow-Credentials: true');
 use Illuminate\Http\Request;
 
 /*
@@ -13,4 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', 'IndexController@index')->name('index');
+
+//Route::group(['middleware' => 'cors'], function(){
+    Route::post('/', 'IndexController@index')->name('index');
+//});
+
+
+//Route::resource('bank_accounts', 'Api\BankAccountsController', ['except' => ['create', 'edit']]);

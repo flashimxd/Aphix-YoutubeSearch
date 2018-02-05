@@ -7,13 +7,31 @@ use Alaouy\Youtube\Facades\Youtube;
 
 class IndexController extends Controller
 {
-    public function index(){
+    public function index(Request $request)
+    {
+        $search = $request->search;
+        $return = [];
+        $result = Youtube::searchVideos($search);
 
-        $data = Youtube::searchVideos('Android');
-        //$json = json_decode($data);
-        //var_dump($json->items[0]->snippet->thumbnails);
-        return response()->json($data[0]);
+        if(count($result)){
+            foreach($result as $data ){
+                $id = $data->id->videoId;
+                $return[] = $this->getVideoDetails($id);
+            }
+        }
 
-        //return Youtube::searchVideos('Android');
+        return $return;
+    }
+
+    private function getVideoDetails($id)
+    {
+
+        if($id && is_string($id)){
+            $rs = Youtube::getVideoInfo($id);
+            //dd($rs->player->embedHtml);
+            return ['id' => $id, 'title' => $rs->snippet->title, 'description' => $rs->snippet->description, 'player' => $rs->player->embedHtml ];
+        }
+
+        return null;
     }
 }

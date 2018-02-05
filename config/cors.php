@@ -17,7 +17,6 @@ return [
     'allowedHeaders' => ['*'],
     'allowedMethods' => ['*'],
     'exposedHeaders' => [],
-    'maxAge' => 0,
-    'X-Frame-Options' => ['ALLOW FROM https://www.googleapis.com/youtube/v3/']
+    'maxAge' => 0
 
 ];

@@ -163,7 +163,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Alaouy\Youtube\YoutubeServiceProvider::class,
-        Barryvdh\Cors\ServiceProvider::class,
+        //Barryvdh\Cors\ServiceProvider::class,
 
         /*
          * Package Service Providers...
