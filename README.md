@@ -24,3 +24,7 @@ npm run build
 
 # build for production and view the bundle analyzer report
 npm run build --report
+
+##Video with the application (SPA) working in my Local Environment
+
+https://drive.google.com/file/d/1M8wuvXwYVFSZobGnTK9JsXa_O5nTcisy/view
