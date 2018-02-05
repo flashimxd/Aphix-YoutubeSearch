@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav style="margin-top: -60px;">
+    <nav class="nav-style">
       <div class="progress" v-if="loading">
         <div class="indeterminate"></div>
       </div>
@@ -26,10 +26,9 @@
       <div class="card-panel z-depth-5">
         <i class="material-icons left">library_music</i><h6 class="left-align text-darken-2">Videos</h6>
         <div class="col s3" v-for="item in data">
-            <div class="card"  style="padding: 5%;">
+            <div class="card card-padding">
               <div class="card-image"> 
                   <div v-html="item.player"></div>
-                  <!--<span class="card-title">{{item.title}}</span> -->
               </div>
               <div class="card-content" style="min-height: 180px;">
                   <p>{{item.description | truncate(140, '...')}}</p>
@@ -88,5 +87,11 @@ a {
 }
 .card {
   overflow: hidden;
+}
+.nav-style{
+  margin-top: -60px;
+}
+.card-padding{
+  padding: 5%;
 }
 </style>

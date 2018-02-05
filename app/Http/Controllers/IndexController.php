@@ -28,7 +28,6 @@ class IndexController extends Controller
 
         if($id && is_string($id)){
             $rs = Youtube::getVideoInfo($id);
-            //dd($rs->player->embedHtml);
             return ['id' => $id, 'title' => $rs->snippet->title, 'description' => $rs->snippet->description, 'player' => $rs->player->embedHtml ];
         }
 

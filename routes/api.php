@@ -13,10 +13,4 @@ use Illuminate\Http\Request;
 |
 */
 
-
-//Route::group(['middleware' => 'cors'], function(){
-    Route::post('/', 'IndexController@index')->name('index');
-//});
-
-
-//Route::resource('bank_accounts', 'Api\BankAccountsController', ['except' => ['create', 'edit']]);
+Route::post('/', 'IndexController@index')->name('index');
