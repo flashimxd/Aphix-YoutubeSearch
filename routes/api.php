@@ -1,7 +1,4 @@
 <?php
-header('Access-Control-Allow-Credentials: true');
-use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes

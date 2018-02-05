@@ -31,7 +31,7 @@
                   <div v-html="item.player"></div>
               </div>
               <div class="card-content" style="min-height: 180px;">
-                  <p>{{item.description | truncate(140, '...')}}</p>
+                  <p>{{item.description | truncate(100, '...')}}</p>
               </div>
               <div class="card-action">
                   <a href="#">See on Youtube</a>
@@ -56,14 +56,15 @@ export default {
     }
   },
   methods: {
+    //find the video using the search param
     find() {
-    this.loading = true;
-    this.$http.post(this.baseUrl, {search: this.search}).then(response => {
-      this.loading = false;
-      this.data = response.body;
-    },response => {
-      this.loading = false;
-    });
+      this.loading = true;
+      this.$http.post(this.baseUrl, {search: this.search}).then(response => {
+        this.loading = false;
+        this.data = response.body;
+      },response => {
+        this.loading = false;
+      });
     }
   }
 }
@@ -88,10 +89,19 @@ a {
 .card {
   overflow: hidden;
 }
+
+.card .card-image{
+  max-height: 270px;
+}
 .nav-style{
   margin-top: -60px;
 }
 .card-padding{
   padding: 5%;
+}
+
+iframe{
+  max-height: 270px !important;
+  height: 270;
 }
 </style>

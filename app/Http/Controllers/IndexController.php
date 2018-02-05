@@ -7,6 +7,12 @@ use Alaouy\Youtube\Facades\Youtube;
 
 class IndexController extends Controller
 {
+    /**
+     * Display the specified resource.
+     *
+     * @param  array  $request (videoId)
+     * @return Response
+     */
     public function index(Request $request)
     {
         $search = $request->search;
@@ -23,9 +29,14 @@ class IndexController extends Controller
         return $return;
     }
 
+    /**
+     * Get video details and mount the array return.
+     *
+     * @param  String  $id (videoId)
+     * @return Array
+     */
     private function getVideoDetails($id)
     {
-
         if($id && is_string($id)){
             $rs = Youtube::getVideoInfo($id);
             return ['id' => $id, 'title' => $rs->snippet->title, 'description' => $rs->snippet->description, 'player' => $rs->player->embedHtml ];
