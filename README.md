@@ -1,13 +1,13 @@
 # youtubesearch By Rangel Netto
 
-> Aphix Php developer chalenge
+> Aphix Php developer challenge
 
 ## Larael 5.4 /VueJS 2.0
 ## Build Setup
 
 ``` bash
 # install PHP dependencies
-compose update
+composer update
 
 ``` bash
 # install NPM dependencies
